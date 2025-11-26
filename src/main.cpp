@@ -48,10 +48,10 @@ int main() {
     int totalTrackTravelled = 0;
     vector<int> serviceOrder;
 
-    // ----------------- UP DIRECTION -----------------
+    // UP Direction
     if (direction == "UP") {
 
-        // Step 1: Serve requests >= current head
+        // Step 1
         for (int req : requests) {
             if (req >= currentPos) {
                 int travel = abs(req - currentPos);
@@ -64,7 +64,7 @@ int main() {
             }
         }
 
-        // Step 2: Go to outermost track (199)
+        // Step 2
         if (currentPos != 199) {
             int travel = 199 - currentPos;
             cout << left << setw(10) << currentPos 
@@ -74,7 +74,7 @@ int main() {
             currentPos = 199;
         }
 
-        // Step 3: Wrap to 0 (counted in this assignment)
+        // Step 3
         int jumpDist = 199;
         cout << left << setw(10) << currentPos 
              << setw(15) << 0 << jumpDist << "\n";
@@ -82,7 +82,7 @@ int main() {
         totalTrackTravelled += jumpDist;
         currentPos = 0;
 
-        // Step 4: Serve remaining (< initialPos)
+        // Step 4
         for (int req : requests) {
             if (req < initialPos) {
                 int travel = abs(req - currentPos);
@@ -96,10 +96,10 @@ int main() {
         }
     }
 
-    // ----------------- DOWN DIRECTION -----------------
+    // DOWN Direction
     else {
 
-        // Step 1: Serve requests <= head (descending)
+        // Step 1
         for (int i = requests.size() - 1; i >= 0; i--) {
             if (requests[i] <= currentPos) {
                 int travel = abs(currentPos - requests[i]);
@@ -113,7 +113,7 @@ int main() {
             }
         }
 
-        // Step 2: Move to track 0
+        // Step 2
         if (currentPos != 0) {
             int travel = currentPos;
 
@@ -124,7 +124,7 @@ int main() {
             currentPos = 0;
         }
 
-        // Step 3: Wrap to 199
+        // Step 3
         int jumpDist = 199;
         cout << left << setw(10) << currentPos 
              << setw(15) << 199 << jumpDist << "\n";
@@ -132,7 +132,7 @@ int main() {
         totalTrackTravelled += jumpDist;
         currentPos = 199;
 
-        // Step 4: Serve requests greater than initialPos (descending)
+        // Step 4
         for (int i = requests.size() - 1; i >= 0; i--) {
             if (requests[i] > initialPos) {
                 int travel = abs(currentPos - requests[i]);
