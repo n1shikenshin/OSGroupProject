@@ -1,64 +1,67 @@
-Ah, got it! You want a **GitHub-ready Markdown version** that you can literally paste into `README.md` and it will render nicely with headings, code blocks, and emojis. Here’s the cleaned-up, fully formatted version:
+# C-SCAN Disk Schedulling Simulator
+TDB2043 - Operating System
 
-```markdown
-# 📦 C-SCAN Disk Scheduling Simulator
-**Operating Systems Group Project (TDB2043)**
+## Overview
+This project simulates the C-SCAN (Circular SCAN) disk schedulling algorithm using C++.
 
-## 📘 Overview
-This project simulates the **C-SCAN (Circular SCAN) disk scheduling algorithm** using C++.  
+1. **C-SCAN Algorithm**
+   * Moves the disk arm in one direction (UP or DOWN), servicing requests along the way.
+   * Once it reaches the last track, it jumps to the opposite end and continues servicing.
+   * Reduces seek time and avoids starvation.
 
-- **C-SCAN Algorithm**  
-  - Moves the disk arm in one direction (UP or DOWN), servicing requests along the way.  
-  - Once it reaches the last track, it jumps to the opposite end and continues servicing.  
-  - Reduces seek time and avoids starvation.  
+2. **Program Features**
+   * Handles UP and DOWN directions.
+   * Calculates total tracks travelled.
+   * Displays a formatted table of Start, Finished and Track Travelled.
+   * Shows the complete service order.
 
-- **Program Features**  
-  - Handles UP and DOWN directions.  
-  - Calculates total tracks travelled.  
-  - Displays a formatted table of Start, Finished, and Track Travelled.  
-  - Shows the complete service order.
+---
 
-## 🎯 Objectives
-- Demonstrate how C-SCAN schedules disk I/O requests efficiently.  
-- Calculate total distance travelled by the disk arm.  
-- Compare servicing order based on direction input.
+## Objectives
 
-## 🗂️ Project Structure
+* Compare how C-SCAN schedules disk I/O request efficiently.
+* Calculate total distance travelled by the disk arm.
+* Compare servicing order based on direction input.
+
+---
+
+## Project Structure
+
 ```
-
-CScanProject/
+OSGroupProject/
 ├── src/
-│   └── cscan.cpp
-├── pseudocode/
-│   └── pseudoCscan.txt
+│   └── main.cpp
 └── README.md
-
-````
-
-## 🚀 How to Run
-
-### 1️⃣ Compile
-Using g++:
-```bash
-g++ src/cscan.cpp -o cscan
-````
-
-### 2️⃣ Run
-
-```bash
-./cscan
 ```
 
-### 3️⃣ Example Input
+---
+
+## How to Run
+
+### Compile
+
+Using 'g++':
+
+```
+g++ main.cpp -o output.o
+```
+
+### Run
+
+```
+./output.o
+```
+
+### Example Input
 
 ```
 Enter initial arm position (0-199): 50
-Enter direction (UP/DOWN): UP
+Enter direction (UP/DOWN) : UP
 Enter number of track requests: 10
 Enter track requests: 85 10 37 175 112 24 73 52 183 149
 ```
 
-### 4️⃣ Sample Output
+### Output
 
 ```
 Sorted requests: 10 24 37 52 73 85 112 149 175 183
@@ -84,17 +87,7 @@ Total Track Travelled: 395
 Service Order: 52 73 85 112 149 175 183 0 10 24 37
 ```
 
-## 💡 Algorithm Details
-
-* **UP Direction**: Serve all requests ≥ initial position, move to 199, jump to 0, serve remaining.
-* **DOWN Direction**: Serve all requests ≤ initial position, move to 0, jump to 199, serve remaining.
-
-## 🧪 Features
-
-* ✔ Input initial arm position, direction, and track requests
-* ✔ Calculate total track travelled
-* ✔ Display service table and service order
-* ✔ Works for both UP and DOWN directions
+---
 
 ## 👥 Team Members
 
@@ -104,14 +97,19 @@ Service Order: 52 73 85 112 149 175 183 0 10 24 37
 * Muhammad Adam Danish Bin Nurulfuad
 * Wan Harith Rifqi Bin Wan Mazli
 
+---
+
 ## 📎 Report & Submission
 
-* Final report included in ULearn
+* Final report included in `ULearn`
 * Source code provided in `/src`
-* Demonstration during lab session
+* Demonstration during presentation
+
+---
 
 ## 📜 License
 
-This project is developed for academic purposes under **Universiti Teknologi Petronas (UTP)**.
+This project is developed for academic purposes under Universiti Teknologi Petronas (UTP).
 
 
+---
