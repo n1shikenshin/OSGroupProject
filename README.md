@@ -31,6 +31,7 @@ This project simulates the C-SCAN (Circular SCAN) disk schedulling algorithm usi
 OSGroupProject/
 ├── src/
 │   └── main.cpp
+│   └── output.o
 └── README.md
 ```
 
